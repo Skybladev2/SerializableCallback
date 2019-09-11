@@ -172,7 +172,7 @@ public class SerializableCallbackDrawer : PropertyDrawer {
 				MethodInfo method = methods[i];
 
 				// Skip methods with wrong return type
-				if (returnType != null && method.ReturnType != returnType) continue;
+				if (returnType != null && method.ReturnType != returnType && !method.ReturnType.IsSubclassOf(returnType)) continue;
 				// Skip methods with null return type
 				// if (method.ReturnType == typeof(void)) continue;
 				// Skip generic methods
